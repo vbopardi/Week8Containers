@@ -1,10 +1,3 @@
-
-################################################################################
-# example fibonacci number code;
-# you do not have to modify this code in any way
-################################################################################
-
-
 def fibs(n):
     '''
     This function computes the first n fibonacci numbers.
@@ -46,12 +39,6 @@ def fib(n):
     return f2
 
 
-################################################################################
-# fibonacci number code using generators;
-# you will need to implement the functions below
-################################################################################
-
-
 class Fib:
     '''
     This class represents all the fibonacci numbers,
@@ -61,15 +48,75 @@ class Fib:
     [1, 1, 2, 3, 5]
     '''
 
+    def __init__(self, n=None):
+        self.n = n
+
+    def __repr__(self):
+        if self.n is None:
+            return "Fib()"
+        else:
+            return "Fib(" + str(self.n) + ")"
+
+    def __iter__(self):
+        return FibIter(self.n)
+
 
 class FibIter:
     '''
     This is the iterator helper class for the Fib class.
     '''
 
+    def __init__(self, n):
+        self.n = n
+        self.counter = 0
+        self.first = 1
+        self.sec = 1
+        self.next = None
+
+    def __next__(self):
+        if self.n and self.n <= self.counter:
+            raise StopIteration
+
+        elif self.counter < 2:
+            self.counter += 1
+            return 1
+        else:
+            self.counter += 1
+            self.next = self.first + self.sec
+            self.first = self.sec
+            self.sec = self.next
+            return self.next
+
 
 def fib_yield(n=None):
     '''
-    This function returns a generator that computes the first n fibonacci numbers.
     If n is None, then the generator is infinite.
     '''
+
+    first = 1
+    sec = 1
+
+    if n is None:
+        yield first
+        yield sec
+        f1 = first
+        f2 = sec
+        while True:
+            i = f1 + f2
+            yield i
+            f1 = f2
+            f2 = i
+    elif n == 1:
+        yield first
+    else:
+        yield first
+        yield sec
+        counter = n - 2
+        f1 = first
+        f2 = sec
+        while counter > 0:
+            i = f1 + f2
+            yield i
+            f1 = f2
+            f2 = i
+            counter -= 1
