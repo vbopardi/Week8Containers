@@ -2,7 +2,7 @@ def range(a, b=None, c=None):
     if b and c:
         if b > 0 and c > b:
             yield 0
-        elif b/c < 0:
+        elif b / c < 0:
             return []
         elif b < 0 and c < 0:
             i = 0
