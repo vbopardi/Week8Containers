@@ -21,6 +21,10 @@ class AVLTree():
         FIXME:
         Implement this function.
         '''
+        super().__init__()
+        self.root = None
+        if xs:
+            self.insert_list(xs)
 
     def balance_factor(self):
         '''
