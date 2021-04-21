@@ -57,6 +57,7 @@ class AVLTree(BST):
             return right and left
         return False
 
+    @staticmethod
     def _left_rotate(node):
         '''
         FIXME:
