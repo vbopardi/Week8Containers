@@ -9,6 +9,3 @@ Build status:
 1. [![](https://github.com/vbopardi/Week8Containers/workflows/tests-BST/badge.svg)](https://github.com/vbopardi/Week8Containers/actions?query=workflow%3Atests-BST)
 1. [![](https://github.com/vbopardi/Week8Containers/workflows/tests-AVLTree/badge.svg)](https://github.com/vbopardi/Week8Containers/actions?query=workflow%3Atests-AVLTree)
 1. [![](https://github.com/vbopardi/Week8Containers/workflows/tests-Heap/badge.svg)](https://github.com/vbopardi/Week8Containers/actions?query=workflow%3Atests-Heap)
-
-..image:: https://github.com/vbopardi/Week8Containers/workflows/tests-AVLTree/badge.svg
-    :target: https://github.com/vbopardi/Week8Containers/workflows/tests-AVLTree/badge.svg
